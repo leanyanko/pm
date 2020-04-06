@@ -1,9 +1,9 @@
 const Pool = require('pg').Pool;
 const { config } = require('./db_configs/local');
-// const { config, connectionString } = require('./db_configs/heroku');
+const { config, connectionString } = require('./db_configs/heroku');
 
-const pool = new Pool(config);
-// const pool = new Pool({connectionString : connectionString});
+// const pool = new Pool(config);
+const pool = new Pool({connectionString : connectionString});
 
 const getAllInvestors = new Promise((resolve, reject) => {
     pool.query('SELECT * FROM investors ORDER BY id ASC', (err, result) => {
