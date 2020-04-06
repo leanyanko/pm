@@ -1,4 +1,4 @@
-DROP TABLE investors;
+DROP TABLE IF EXISTS investors;
 CREATE TABLE investors (
 	ID SERIAL PRIMARY KEY,
 	first_name VARCHAR(30),
