@@ -1,5 +1,5 @@
 const Pool = require('pg').Pool;
-const { config } = require('./db_configs/local');
+// const { config } = require('./db_configs/local');
 const { config, connectionString } = require('./db_configs/heroku');
 
 // const pool = new Pool(config);
