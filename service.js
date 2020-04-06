@@ -5,7 +5,7 @@ const db = require('./dbservice');
 const getAllInvestors = (request, response) => {
     db.getAllInvestors
         .then( 
-            (investors) => response.status(200).json(investors),
+            (investors) => console.log(investors),//response.status(200).json(investors),
             (err) => console.error(err)
         )
 };
