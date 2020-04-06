@@ -7,7 +7,7 @@ const pool = new Pool({connectionString : connectionString});
 
 const getAllInvestors = new Promise((resolve, reject) => {
     pool.query('SELECT * FROM investors ORDER BY id ASC', (err, result) => {
-        console.log("RESULT", result);
+        console.log("RESULT", result.rows);
         console.log("err", err);
         resolve(result.rows);
         reject(new Error(err));
