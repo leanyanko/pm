@@ -6,6 +6,16 @@
 
 ## No need for local insallation
 
+## Installation if necessary:
+
+`git clone https://github.com/meinou/pm.git`
+
+`npm install`
+
+### run
+
+`npm start`
+
 
 ## to access database see 
 
