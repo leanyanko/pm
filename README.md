@@ -22,6 +22,8 @@
 
 ## TODO:
 
+### Create a model for INVESTOR and DOCUMENT
+
 ### Documents table
 Create separate table for all the documents where DOCUMENT_ID would be PRIMARY KEY and INVESTOR_ID FOREIGN KEY to link uploaded files with investor
 

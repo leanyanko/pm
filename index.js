@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3030;
+const port = process.env.PORT || 3030;
 const cors = require('cors');
 
 app.use(cors());
@@ -25,5 +25,6 @@ app.post('/investors/upload', service.uploadDocs);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
+
 });
 
