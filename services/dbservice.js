@@ -1,14 +1,9 @@
 const Pool = require('pg').Pool;
-// const { config } = require('./db_configs/local');
-const { config, connectionString } = require('./db_configs/heroku');
+const { config } = require('./db_configs/aws');
+const pool = new Pool(config);
 
-// const pool = new Pool(config);
-const pool = new Pool({connectionString : connectionString});
-
-const getAllInvestors = new Promise((resolve, reject) => {
+const getAllInvestors = () => new Promise((resolve, reject) => {
     pool.query('SELECT * FROM investors ORDER BY id ASC', (err, result) => {
-        console.log("RESULT", result.rows);
-        console.log("err", err);
         resolve(result.rows);
         reject(new Error(err));
     })
@@ -30,6 +25,7 @@ const createInverstor = (first_name, last_name, dob, phone, address, city, state
         VALUES 
             ($1, $2, $3, $4, $5, $6, $7, $8)`,
         [first_name, last_name, dob, phone, address, city, state, zipcode], (err, result) => {
+            console.log('db', result);
             resolve(result);
             reject(new Error(err));
         });

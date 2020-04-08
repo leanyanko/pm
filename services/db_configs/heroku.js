@@ -1,8 +1,8 @@
 const config = { 
-    user: 'ehpkyxgsqozlpz',         
-    host: 'ec2-18-209-187-54.compute-1.amazonaws.com',  
-    database: 'd9velufuf9gmbp',
-    password: 'ad2a580fb555543fd5e67a72fddddb9d3e828de43302ac5a0c9272c0e62e0488',
+    user: 'mlhfywmsznshei',         
+    host: 'ec2-52-86-73-86.compute-1.amazonaws.com',  
+    database: 'dfih5e26clnfsm',
+    password: '909e4b3bd77a8f63970356146de1dc2f16bbe8c9c9d1564e2b8a71d35e3c6454',
     port: 5432
 }
 
