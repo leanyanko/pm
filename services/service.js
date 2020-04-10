@@ -22,10 +22,9 @@ const getInvestorById = (request, response) => {
 
 const createInverstor = (request, response) => {
     const {first_name, last_name, dob, phone, address, city, state, zipcode } = request.body;
-    console.log("investor", city);
     db.createInverstor(first_name, last_name, dob, phone, address, city, state, zipcode)
     .then(
-        (result) => response.status(200).json(`New investor ${first_name} with id= ${result.insertId}`), 
+        (result) => response.status(200).json(result.rows[0].id), 
         (err) => console.error(err)
     )
 }
@@ -42,7 +41,7 @@ const deleteInversor = (request, response) => {
 const upload = require('./uploadService');
 
 const uploadDocs = (request, response) => {
-    upload.uploadFiles(request)
+    upload.uploadFiles({files: request, callback: 4})
     .then(
         (result) => response.status(200).send(result),
         (err) => response.status(500).json(err)

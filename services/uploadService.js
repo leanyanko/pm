@@ -10,9 +10,11 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).array('file');
 
-const uploadFiles = (files, result) => {
+const uploadFiles = (request, result) => {
+    // request.files - files
+    //request.callback - callback to post new entry to the database
     return new Promise((resolve, reject) => {
-        upload(files, result, function(err) {
+        upload(request.files, result, function(err) {
             resolve(result);
             reject(err);
         })
